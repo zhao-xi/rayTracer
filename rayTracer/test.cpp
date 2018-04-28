@@ -5,6 +5,7 @@
 #include "hitable.h"
 #include "sphere.h"
 #include "hitableList.h"
+#include "camera.h"
 using namespace std;
 
 vec3 color(Ray& r,hitable *world) {
@@ -22,25 +23,27 @@ int main() {
 	file.open("image.ppm", ios::out);
 	int nx = 800;
 	int ny = 400;
+	int ns = 100;
 	file << "P3" << endl;
 	file << nx << " " << ny << endl << 255 << endl;
-
-	vec3 lower_left_corner(-2.0, -1.0, -1.0);
-	vec3 vertical(0.0, 2.0, 0.0);
-	vec3 horizontal(4.0, 0.0, 0.0);
-	vec3 origin(0.0, 0.0, 0.0);
 
 	hitable *list[2];
 	list[0] = new sphere(vec3(0.0, 0.0, -1.0), 0.5);
 	list[1] = new sphere(vec3(0.0, -100.5, -1.0), 100);
 	hitable *world = new hitable_list(list, 2);
-
+	Camera cam;
+	int count = 0;
 	for (int j = ny - 1; j >= 0; j--) {
 		for (int i = 0; i < nx; i++) {
-			float u = float(i) / float(nx);
-			float v = float(j) / float(ny);
-			Ray r(origin, lower_left_corner + u * horizontal + v * vertical);
-			vec3 col = color(r, world);
+			vec3 col(0.0, 0.0, 0.0);
+			for (int s = 0; s < ns; s++) {
+				float u = float(i + rand()/RAND_MAX) / float(nx);
+				float v = float(j + rand()/RAND_MAX) / float(ny);
+				Ray r = cam.get_ray(u, v);
+				vec3 p = r.point_at_parameter(2.0);
+				col += color(r, world);
+			}
+			col /= float(ns);
 			float ir = int(col[0] * 255.99);
 			float ig = int(col[1] * 255.99);
 			float ib = int(col[2] * 255.99);

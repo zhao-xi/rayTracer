@@ -1,15 +1,10 @@
-﻿  sphere.cpp
-d:\raytracer\raytracer\vec3.h(77): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-d:\raytracer\raytracer\sphere.cpp(5): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  test.cpp
+﻿  test.cpp
 d:\raytracer\raytracer\vec3.h(77): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 d:\raytracer\raytracer\hitablelist.h(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-d:\raytracer\raytracer\test.cpp(16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-d:\raytracer\raytracer\test.cpp(17): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-d:\raytracer\raytracer\test.cpp(17): warning C4305: 'argument': truncation from 'double' to 'float'
-d:\raytracer\raytracer\test.cpp(44): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-d:\raytracer\raytracer\test.cpp(45): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-d:\raytracer\raytracer\test.cpp(46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
-test.obj : error LNK2005: "class vec3 __cdecl unit_vector(class vec3)" (?unit_vector@@YA?AVvec3@@V1@@Z) already defined in sphere.obj
-D:\rayTracer\rayTracer\Debug\rayTracer.exe : fatal error LNK1169: one or more multiply defined symbols found
+d:\raytracer\raytracer\test.cpp(17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\raytracer\raytracer\test.cpp(18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\raytracer\raytracer\test.cpp(18): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\raytracer\raytracer\test.cpp(47): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+d:\raytracer\raytracer\test.cpp(48): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+d:\raytracer\raytracer\test.cpp(49): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  rayTracer.vcxproj -> D:\rayTracer\rayTracer\Debug\rayTracer.exe
