@@ -1,0 +1,16 @@
+﻿  test.cpp
+d:\raytracer\raytracer\vec3.h(77): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\raytracer\raytracer\hitablelist.h(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\raytracer\raytracer\test.cpp(19): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\raytracer\raytracer\test.cpp(25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\raytracer\raytracer\test.cpp(26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\raytracer\raytracer\test.cpp(26): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\raytracer\raytracer\test.cpp(57): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+d:\raytracer\raytracer\test.cpp(58): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+d:\raytracer\raytracer\test.cpp(59): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  Generating code
+  1 of 165 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  rayTracer.vcxproj -> D:\rayTracer\rayTracer\Release\rayTracer.exe
