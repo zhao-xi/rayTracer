@@ -20,7 +20,7 @@ bool hitable_list::hit(const Ray& r, float tmin, float tmax, hit_record& rec) co
 	for (int i = 0; i < list_size; i++) {
 		if (list[i]->hit(r, tmin, closest_so_far, temp_rec)) {
 			hit_anything = true;
-			closest_so_far = tmin;
+			closest_so_far = temp_rec.t;
 			rec = temp_rec;
 		}
 	}
