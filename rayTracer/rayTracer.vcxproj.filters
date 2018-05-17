@@ -18,7 +18,7 @@
     <ClCompile Include="test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hitable.cpp">
+    <ClCompile Include="hitable_subclasses.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

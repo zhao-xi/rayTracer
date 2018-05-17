@@ -14,6 +14,7 @@ public:
 	virtual bool hit(const Ray& r, float t_min, float t_max, hit_record& rec) const = 0;
 };
 
+/*funcitons gonna be used*/
 inline vec3 random_in_unit_sphere() {
 	vec3 p;
 	do {
@@ -22,6 +23,8 @@ inline vec3 random_in_unit_sphere() {
 	return p;
 }
 
+
+/*subclasses*/
 class sphere :public hitable {
 public:
 	sphere() {}
