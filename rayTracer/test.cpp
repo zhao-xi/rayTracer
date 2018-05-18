@@ -32,14 +32,14 @@ int main() {
 	file.open("image.ppm", ios::out);
 	int nx = 800;
 	int ny = 400;
-	int ns = 10;
+	int ns = 100;
 	file << "P3" << endl;
 	file << nx << " " << ny << endl << 255 << endl;
 	
 	hitable *list[5];
-	list[0] = new sphere(vec3(-1.0, 0.0, -1.0), 0.5,new lambertian(vec3(0.0,0.0,1.0)));
+	list[0] = new sphere(vec3(-0.0, 0.0, -1.0), 0.5,new lambertian(vec3(0.0,0.0,1.0)));
 	list[1] = new sphere(vec3(1.0, 0.0, -1.0), 0.5, new dielectric(1.5));
-	list[2] = new sphere(vec3(0.0, 0.0, -1.0), 0.5, new metal(vec3(0.2, 0.2, 0.5), 0.3));
+	list[2] = new sphere(vec3(-1.0, 0.0, -1.0), 0.5, new metal(vec3(0.2, 0.2, 0.5), 0.3));
 	list[3] = new sphere(vec3(1.0, 0.0, -1.0), -0.45, new dielectric(1.5)); // to make the dielectric sphere hollow
 	list[4] = new sphere(vec3(0.0, -100.5, -1.0), 100, new lambertian(vec3(0.2, 0.5, 0.3)));
 
