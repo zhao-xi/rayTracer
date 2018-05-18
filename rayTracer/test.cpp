@@ -32,20 +32,23 @@ int main() {
 	file.open("image.ppm", ios::out);
 	int nx = 800;
 	int ny = 400;
-	int ns = 100;
+	int ns = 10;
 	file << "P3" << endl;
 	file << nx << " " << ny << endl << 255 << endl;
 	
-	hitable *list[2];
-//	list[0] = new sphere(vec3(-1.0, 0.0, -1.0), 0.5,new lambertian(vec3(0.0,0.0,1.0)));
-	list[0] = new sphere(vec3(0.0, 0.0, -1.0), 0.5, new dielectric(1.5));
-//	list[2] = new sphere(vec3(1.0, 0.0, -1.0), 0.5, new metal(vec3(0.2, 0.2, 0.5), 0.3));
-//	list[3] = new sphere(vec3(0.0, 0.0, -1.0), -0.45, new dielectric(1.5)); // to make the dielectric sphere hollow
-	list[1] = new sphere(vec3(0.0, -100.5, -1.0), 100, new lambertian(vec3(0.2, 0.5, 0.3)));
+	hitable *list[5];
+	list[0] = new sphere(vec3(-1.0, 0.0, -1.0), 0.5,new lambertian(vec3(0.0,0.0,1.0)));
+	list[1] = new sphere(vec3(1.0, 0.0, -1.0), 0.5, new dielectric(1.5));
+	list[2] = new sphere(vec3(0.0, 0.0, -1.0), 0.5, new metal(vec3(0.2, 0.2, 0.5), 0.3));
+	list[3] = new sphere(vec3(1.0, 0.0, -1.0), -0.45, new dielectric(1.5)); // to make the dielectric sphere hollow
+	list[4] = new sphere(vec3(0.0, -100.5, -1.0), 100, new lambertian(vec3(0.2, 0.5, 0.3)));
 
-	hitable *world = new hitable_list(list, 2);
-	Camera cam(vec3(0, 0, 0), vec3(0, 0, -1), vec3(0, 1, 0), 90, float(nx) / float(ny));
-	int count = 0;
+	hitable *world = new hitable_list(list, 5);
+
+	vec3 lookfrom(3, 3, 2);
+	vec3 lookat(0, 0, -1);
+	Camera cam(lookfrom, lookat, vec3(0, 1, 0), 45.0, float(nx) / float(ny), 2.0, (lookfrom - lookat).length());
+	//int count = 0;
 	for (int j = ny - 1; j >= 0; j--) {
 		cout << "Progress: " << 100 - j / 4 << "%\r";
 		for (int i = 0; i < nx; i++) {

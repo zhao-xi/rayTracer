@@ -1,16 +1,18 @@
 ﻿  test.cpp
 e:\zhaoxi\raytracer\raytracer\vec3.h(77): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
 e:\zhaoxi\raytracer\raytracer\hitablelist.h(21): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
-e:\zhaoxi\raytracer\raytracer\camera.h(10): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\camera.h(18): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
 e:\zhaoxi\raytracer\raytracer\material.h(20): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
 e:\zhaoxi\raytracer\raytracer\material.h(79): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
 e:\zhaoxi\raytracer\raytracer\test.cpp(13): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
 e:\zhaoxi\raytracer\raytracer\test.cpp(25): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
 e:\zhaoxi\raytracer\raytracer\test.cpp(26): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
 e:\zhaoxi\raytracer\raytracer\test.cpp(26): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
+e:\zhaoxi\raytracer\raytracer\test.cpp(42): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
+e:\zhaoxi\raytracer\raytracer\test.cpp(43): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
 e:\zhaoxi\raytracer\raytracer\test.cpp(44): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
-e:\zhaoxi\raytracer\raytracer\test.cpp(62): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
-e:\zhaoxi\raytracer\raytracer\test.cpp(63): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
-e:\zhaoxi\raytracer\raytracer\test.cpp(64): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\test.cpp(65): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\test.cpp(66): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\test.cpp(67): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
   rayTracer.vcxproj -> E:\ZHAOXI\rayTracer\rayTracer\x64\Debug\rayTracer.exe
   rayTracer.vcxproj -> E:\ZHAOXI\rayTracer\rayTracer\x64\Debug\rayTracer.pdb (Partial PDB)
