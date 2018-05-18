@@ -1,15 +1,16 @@
 ﻿  test.cpp
-d:\raytracer\raytracer\vec3.h(77): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-d:\raytracer\raytracer\hitablelist.h(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-d:\raytracer\raytracer\camera.h(9): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-d:\raytracer\raytracer\material.h(20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-d:\raytracer\raytracer\material.h(79): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-d:\raytracer\raytracer\test.cpp(13): warning C4305: 'argument': truncation from 'double' to 'float'
-d:\raytracer\raytracer\test.cpp(25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-d:\raytracer\raytracer\test.cpp(26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-d:\raytracer\raytracer\test.cpp(26): warning C4305: 'argument': truncation from 'double' to 'float'
-d:\raytracer\raytracer\test.cpp(39): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-d:\raytracer\raytracer\test.cpp(60): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-d:\raytracer\raytracer\test.cpp(61): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-d:\raytracer\raytracer\test.cpp(62): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-  rayTracer.vcxproj -> D:\rayTracer\rayTracer\x64\Debug\rayTracer.exe
+e:\zhaoxi\raytracer\raytracer\vec3.h(77): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\hitablelist.h(21): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\camera.h(10): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\material.h(20): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\material.h(79): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\test.cpp(13): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
+e:\zhaoxi\raytracer\raytracer\test.cpp(25): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\test.cpp(26): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\test.cpp(26): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
+e:\zhaoxi\raytracer\raytracer\test.cpp(44): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
+e:\zhaoxi\raytracer\raytracer\test.cpp(62): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\test.cpp(63): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\test.cpp(64): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
+  rayTracer.vcxproj -> E:\ZHAOXI\rayTracer\rayTracer\x64\Debug\rayTracer.exe
+  rayTracer.vcxproj -> E:\ZHAOXI\rayTracer\rayTracer\x64\Debug\rayTracer.pdb (Partial PDB)

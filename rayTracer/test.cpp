@@ -36,13 +36,15 @@ int main() {
 	file << "P3" << endl;
 	file << nx << " " << ny << endl << 255 << endl;
 	
-	float R = cos(M_PI / 4);
 	hitable *list[2];
-	list[0] = new sphere(vec3(-R, 0.0, -1.0), R,new lambertian(vec3(0.0,0.0,1.0)));
-	list[1] = new sphere(vec3(R, 0.0, -1.0), R, new lambertian(vec3(1.0, 0.0, 0.0)));
+//	list[0] = new sphere(vec3(-1.0, 0.0, -1.0), 0.5,new lambertian(vec3(0.0,0.0,1.0)));
+	list[0] = new sphere(vec3(0.0, 0.0, -1.0), 0.5, new dielectric(1.5));
+//	list[2] = new sphere(vec3(1.0, 0.0, -1.0), 0.5, new metal(vec3(0.2, 0.2, 0.5), 0.3));
+//	list[3] = new sphere(vec3(0.0, 0.0, -1.0), -0.45, new dielectric(1.5)); // to make the dielectric sphere hollow
+	list[1] = new sphere(vec3(0.0, -100.5, -1.0), 100, new lambertian(vec3(0.2, 0.5, 0.3)));
 
 	hitable *world = new hitable_list(list, 2);
-	Camera cam(90.0,float(nx)/float(ny));
+	Camera cam(vec3(0, 0, 0), vec3(0, 0, -1), vec3(0, 1, 0), 90, float(nx) / float(ny));
 	int count = 0;
 	for (int j = ny - 1; j >= 0; j--) {
 		cout << "Progress: " << 100 - j / 4 << "%\r";
