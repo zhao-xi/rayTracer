@@ -8,11 +8,19 @@ e:\zhaoxi\raytracer\raytracer\test.cpp(13): warning C4305: '引数': 'double' �
 e:\zhaoxi\raytracer\raytracer\test.cpp(25): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
 e:\zhaoxi\raytracer\raytracer\test.cpp(26): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
 e:\zhaoxi\raytracer\raytracer\test.cpp(26): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
-e:\zhaoxi\raytracer\raytracer\test.cpp(42): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
+e:\zhaoxi\raytracer\raytracer\test.cpp(38): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\test.cpp(38): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
+e:\zhaoxi\raytracer\raytracer\test.cpp(39): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
 e:\zhaoxi\raytracer\raytracer\test.cpp(43): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
-e:\zhaoxi\raytracer\raytracer\test.cpp(44): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
-e:\zhaoxi\raytracer\raytracer\test.cpp(65): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
-e:\zhaoxi\raytracer\raytracer\test.cpp(66): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
-e:\zhaoxi\raytracer\raytracer\test.cpp(67): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\test.cpp(47): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\test.cpp(47): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
+e:\zhaoxi\raytracer\raytracer\test.cpp(50): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
+e:\zhaoxi\raytracer\raytracer\test.cpp(56): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
+e:\zhaoxi\raytracer\raytracer\test.cpp(57): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
+e:\zhaoxi\raytracer\raytracer\test.cpp(58): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
+e:\zhaoxi\raytracer\raytracer\test.cpp(79): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
+e:\zhaoxi\raytracer\raytracer\test.cpp(95): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\test.cpp(96): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
+e:\zhaoxi\raytracer\raytracer\test.cpp(97): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
   rayTracer.vcxproj -> E:\ZHAOXI\rayTracer\rayTracer\x64\Debug\rayTracer.exe
   rayTracer.vcxproj -> E:\ZHAOXI\rayTracer\rayTracer\x64\Debug\rayTracer.pdb (Partial PDB)

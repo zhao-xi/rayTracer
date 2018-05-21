@@ -27,31 +27,61 @@ vec3 color(const Ray& r, hitable *world,int depth) {
 	}
 }
 
+hitable *random_scene() {
+	int n = 500;
+	hitable **list = new hitable*[n + 1];
+	list[0] = new sphere(vec3(0, -1000, 0), 1000, new lambertian(vec3(0.5, 0.5, 0.5)));
+	int i = 1;
+	for (int a = -11; a < 11; a++) {
+		for (int b = -11; b < 11; b++) {
+			float choose_mat = float(rand()) / RAND_MAX;
+			vec3 center(a + 0.9*float(rand()) / RAND_MAX,0.2,b+0.9*float(rand())/RAND_MAX);
+			if (((center - vec3(4, 0.2, 0)).length() > 0.9)&&((center - vec3(-4, 0.2, 0)).length() > 0.9)&&((center - vec3(0, 0.2, 0)).length() > 0.9)) {
+				if (choose_mat < 0.8) { // diffuse
+					list[i++] = new sphere(center, 0.2, new lambertian(vec3(float(rand()) / RAND_MAX * float(rand()) / RAND_MAX,
+						                                                    float(rand()) / RAND_MAX * float(rand()) / RAND_MAX,
+						                                                    float(rand()) / RAND_MAX * float(rand()) / RAND_MAX)));
+				}
+				else if (choose_mat < 0.95) { // metal
+					list[i++] = new sphere(center, 0.2, 
+						new metal(vec3(0.5*(1 + float(rand()) / RAND_MAX), 0.5*(1 + float(rand()) / RAND_MAX), 0.5*(1 + float(rand()) / RAND_MAX)), 0.5*float(rand()) / RAND_MAX));
+				}
+				else { // dieletric
+					list[i++] = new sphere(center, 0.2, new dielectric(1.5));
+				}
+			}
+		}
+	}
+	list[i++] = new sphere(vec3(0, 1, 0), 1.0, new dielectric(1.5));
+	list[i++] = new sphere(vec3(-4, 1, 0), 1.0, new lambertian(vec3(0.6, 0.5, 0.1)));
+	list[i++] = new sphere(vec3(4, 1, 0), 1.0, new metal(vec3(0.2, 0.6, 0.5), 0.0));
+	list[i++] = new sphere(vec3(0, 1, 0), -0.95, new dielectric(1.5));
+	list[i++] = new sphere(vec3(-8, 1, 0), 1.0, new dielectric(1.5));
+	return new hitable_list(list, i);
+}
+
 int main() {
 	ofstream file;
 	file.open("image.ppm", ios::out);
-	int nx = 800;
-	int ny = 400;
-	int ns = 100;
+	int nx = 960;
+	int ny = 540;
+	int ns = 200;
 	file << "P3" << endl;
 	file << nx << " " << ny << endl << 255 << endl;
 	
-	hitable *list[5];
-	list[0] = new sphere(vec3(-0.0, 0.0, -1.0), 0.5,new lambertian(vec3(0.0,0.0,1.0)));
-	list[1] = new sphere(vec3(1.0, 0.0, -1.0), 0.5, new dielectric(1.5));
-	list[2] = new sphere(vec3(-1.0, 0.0, -1.0), 0.5, new metal(vec3(0.2, 0.2, 0.5), 0.3));
-	list[3] = new sphere(vec3(1.0, 0.0, -1.0), -0.45, new dielectric(1.5)); // to make the dielectric sphere hollow
-	list[4] = new sphere(vec3(0.0, -100.5, -1.0), 100, new lambertian(vec3(0.2, 0.5, 0.3)));
+	
 
-	hitable *world = new hitable_list(list, 5);
+	hitable *world = random_scene();
 
-	vec3 lookfrom(3, 3, 2);
-	vec3 lookat(0, 0, -1);
-	Camera cam(lookfrom, lookat, vec3(0, 1, 0), 45.0, float(nx) / float(ny), 2.0, (lookfrom - lookat).length());
+	vec3 lookfrom(25, 4, 8);
+	vec3 lookat(0, 0.5, 0);
+	float focus_dist = (lookfrom - vec3(4, 1, 0)).length();
+	Camera cam(lookfrom, lookat, vec3(0, 1, 0), 10.0, float(nx) / float(ny), 0.1, focus_dist);
 	//int count = 0;
+	cout << "warning: don't click in this window!" << endl;
 	for (int j = ny - 1; j >= 0; j--) {
-		cout << "Progress: " << 100 - j / 4 << "%\r";
 		for (int i = 0; i < nx; i++) {
+			cout << "Prgress: " << j << "j " << i << "i\r";
 			vec3 col(0.0, 0.0, 0.0);
 			for (int s = 0; s < ns; s++) {
 				float u = float(i + float(rand())/RAND_MAX) / float(nx);
