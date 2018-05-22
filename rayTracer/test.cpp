@@ -78,7 +78,6 @@ int main() {
 	float focus_dist = (lookfrom - vec3(4, 1, 0)).length();
 	Camera cam(lookfrom, lookat, vec3(0, 1, 0), 10.0, float(nx) / float(ny), 0.1, focus_dist);
 	//int count = 0;
-	cout << "warning: don't click in this window!" << endl;
 	for (int j = ny - 1; j >= 0; j--) {
 		for (int i = 0; i < nx; i++) {
 			cout << "Prgress: " << j << "j " << i << "i\r";
