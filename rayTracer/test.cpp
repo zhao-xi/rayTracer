@@ -38,9 +38,7 @@ hitable *random_scene() {
 			vec3 center(a + 0.9*float(rand()) / RAND_MAX,0.2,b+0.9*float(rand())/RAND_MAX);
 			if (((center - vec3(4, 0.2, 0)).length() > 0.9)&&((center - vec3(-4, 0.2, 0)).length() > 0.9)&&((center - vec3(0, 0.2, 0)).length() > 0.9)) {
 				if (choose_mat < 0.8) { // diffuse
-					list[i++] = new sphere(center, 0.2, new lambertian(vec3(float(rand()) / RAND_MAX * float(rand()) / RAND_MAX,
-						                                                    float(rand()) / RAND_MAX * float(rand()) / RAND_MAX,
-						                                                    float(rand()) / RAND_MAX * float(rand()) / RAND_MAX)));
+					list[i++] = new moving_sphere(center, center + vec3(0, 0.5*random_1(), 0), 0.0, 1.0, 0.2, new lambertian(vec3(random_1()*random_1(), random_1()*random_1(), random_1()*random_1())));
 				}
 				else if (choose_mat < 0.95) { // metal
 					list[i++] = new sphere(center, 0.2, 
@@ -63,24 +61,23 @@ hitable *random_scene() {
 int main() {
 	ofstream file;
 	file.open("image.ppm", ios::out);
-	int nx = 960;
-	int ny = 540;
-	int ns = 200;
+	int nx = 400;
+	int ny = 200;
+	int ns = 10;
 	file << "P3" << endl;
 	file << nx << " " << ny << endl << 255 << endl;
 	
-	
+
 
 	hitable *world = random_scene();
 
-	vec3 lookfrom(25, 4, 8);
-	vec3 lookat(0, 0.5, 0);
-	float focus_dist = (lookfrom - vec3(4, 1, 0)).length();
-	Camera cam(lookfrom, lookat, vec3(0, 1, 0), 10.0, float(nx) / float(ny), 0.1, focus_dist);
+	vec3 lookfrom(13, 2, 3);
+	vec3 lookat(0, 0, 0);
+	float focus_dist = 10.0;
+	Camera cam(lookfrom, lookat, vec3(0, 1, 0), 20.0, float(nx) / float(ny), 0.0, focus_dist, 0.0, 1.0);
 	//int count = 0;
 	for (int j = ny - 1; j >= 0; j--) {
 		for (int i = 0; i < nx; i++) {
-			cout << "Prgress: " << j << "j " << i << "i\r";
 			vec3 col(0.0, 0.0, 0.0);
 			for (int s = 0; s < ns; s++) {
 				float u = float(i + float(rand())/RAND_MAX) / float(nx);

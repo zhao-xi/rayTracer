@@ -37,11 +37,10 @@ public:
 	lambertian(const vec3& a) :albedo(a) {}
 	bool scatter(const Ray& r_in, const hit_record& rec, vec3& attenuation, Ray& scattered) const override {
 		vec3 target = rec.p + rec.normal + random_in_unit_sphere();
-		scattered = Ray(rec.p, target - rec.p);
+		scattered = Ray(rec.p, target - rec.p, r_in.time());
 		attenuation = albedo;
 		return true;
 	}
-
 	vec3 albedo;
 };
 
@@ -50,7 +49,7 @@ public:
 	metal(const vec3& a, float f) :albedo(a) { if (f < 1) fuzz = f; else fuzz = 1; }
 	bool scatter(const Ray& r_in, const hit_record& rec, vec3& attenuation, Ray& scattered) const override {
 		vec3 reflected = reflect(unit_vector(r_in.direction()), rec.normal);
-		scattered = Ray(rec.p, reflected + fuzz * random_in_unit_sphere());
+		scattered = Ray(rec.p, reflected + fuzz * random_in_unit_sphere(),r_in.time());
 		attenuation = albedo;
 		return true;
 	}
@@ -83,14 +82,14 @@ public:
 			reflect_prob = schlick(cosine, ref_idx);
 		}
 		else {
-			scattered = Ray(rec.p, reflected);
+			scattered = Ray(rec.p, reflected,r_in.time());
 			reflect_prob = 1.0;
 		}
 		if (float(rand()) / RAND_MAX < reflect_prob) {
-			scattered = Ray(rec.p, reflected);
+			scattered = Ray(rec.p, reflected,r_in.time());
 		}
 		else {
-			scattered = Ray(rec.p, refracted);
+			scattered = Ray(rec.p, refracted,r_in.time());
 		}
 		return true;
 	}

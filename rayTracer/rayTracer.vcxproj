@@ -125,6 +125,7 @@
     <ClInclude Include="hitable.h" />
     <ClInclude Include="hitableList.h" />
     <ClInclude Include="Material.h" />
+    <ClInclude Include="random.h" />
     <ClInclude Include="ray.h" />
     <ClInclude Include="vec3.h" />
   </ItemGroup>
