@@ -34,15 +34,15 @@ hitable *random_scene() {
 	int i = 1;
 	for (int a = -11; a < 11; a++) {
 		for (int b = -11; b < 11; b++) {
-			float choose_mat = float(rand()) / RAND_MAX;
-			vec3 center(a + 0.9*float(rand()) / RAND_MAX,0.2,b+0.9*float(rand())/RAND_MAX);
+			float choose_mat = random_1();
+			vec3 center(a + 0.9*random_1(),0.2,b+0.9*random_1());
 			if (((center - vec3(4, 0.2, 0)).length() > 0.9)&&((center - vec3(-4, 0.2, 0)).length() > 0.9)&&((center - vec3(0, 0.2, 0)).length() > 0.9)) {
 				if (choose_mat < 0.8) { // diffuse
 					list[i++] = new moving_sphere(center, center + vec3(0, 0.5*random_1(), 0), 0.0, 1.0, 0.2, new lambertian(vec3(random_1()*random_1(), random_1()*random_1(), random_1()*random_1())));
 				}
 				else if (choose_mat < 0.95) { // metal
 					list[i++] = new sphere(center, 0.2, 
-						new metal(vec3(0.5*(1 + float(rand()) / RAND_MAX), 0.5*(1 + float(rand()) / RAND_MAX), 0.5*(1 + float(rand()) / RAND_MAX)), 0.5*float(rand()) / RAND_MAX));
+						new metal(vec3(0.5*(1 + random_1()), 0.5*(1 + random_1()), 0.5*(1 + random_1())), 0.5*random_1()));
 				}
 				else { // dieletric
 					list[i++] = new sphere(center, 0.2, new dielectric(1.5));
@@ -80,8 +80,8 @@ int main() {
 		for (int i = 0; i < nx; i++) {
 			vec3 col(0.0, 0.0, 0.0);
 			for (int s = 0; s < ns; s++) {
-				float u = float(i + float(rand())/RAND_MAX) / float(nx);
-				float v = float(j + float(rand())/RAND_MAX) / float(ny);
+				float u = float(i + random_1()) / float(nx);
+				float v = float(j + random_1()) / float(ny);
 				Ray r = cam.get_ray(u, v);
 			//	vec3 p = r.point_at_parameter(2.0);
 				col += color(r, world, 0);
